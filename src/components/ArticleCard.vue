@@ -27,6 +27,8 @@ const props = defineProps({
 }
 .card-text {
   font-size: 1.2rem;
+  width: 90%;
+  margin: auto;
 }
 </style>
 /
