@@ -9,15 +9,26 @@ const content = useContentStore()
 
 const isReady = ref(false)
 const articles = ref([])
-const featuredArticle = ref('')
+const featuredArticles = ref([])
 
 //Mocking getting articles, sorting them
 
 async function prepareArticles() {
   //Assuming here the order is not guaranteed
   articles.value = await content.sortArticlesByDate(content.articles)
-  featuredArticle.value = await content.getFeatured(articles.value)
   isReady.value = true
+  getFeaturedArticles()
+}
+
+function getFeaturedArticles() {
+  let i = 0
+  while (featuredArticles.value.length < 3) {
+    if (articles.value[i].featured === true) {
+      featuredArticles.value.push(articles.value[i])
+    }
+    i++
+  }
+  console.log(featuredArticles.value)
 }
 
 prepareArticles()
@@ -29,10 +40,10 @@ prepareArticles()
       <ATitle text="Headline and Teaser" size="3.5rem"></ATitle>
     </header>
     <section class="featured-article">
-      <FeaturedArticle
+      <!-- <FeaturedArticle
         :headline="featuredArticle.headline"
         :img-source="featuredArticle.image"
-      ></FeaturedArticle>
+      ></FeaturedArticle> -->
     </section>
     <section>
       <div class="cards-container">

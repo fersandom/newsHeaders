@@ -45,6 +45,34 @@ export const useContentStore = defineStore('content', () => {
       short: 'When the best of a game is the controversy about a off-side goal it was a bad game.',
       date: 1719158362,
       featured: true
+    },
+    {
+      id: 1006,
+      headline: 'Croatia out',
+      image:
+        'https://s.france24.com/media/display/9e0b4eb2-3278-11ef-a782-005056a97e36/w:980/p:16x9/e18944b6234db1600cb99ea92e6d4f1277fd7f0f.jpg',
+      short: "I'd make a funny comment but my life is at risk",
+      date: 1719580806,
+      featured: true
+    },
+    {
+      id: 1007,
+      headline: 'Three out of 4 games end 0-0',
+      image:
+        'https://t3.gstatic.com/licensed-image?q=tbn:ANd9GcQJoAaBKtE2cC_590TPosGlhLhzdp3f74E4S1QUtnzL1uhbIo5bOpfMQIPWYEBF8TXy',
+      short: 'Aleksander Čeferin says he has not seen such displays of football since 2004 Euro.',
+      date: 1719581180,
+      featured: false
+    },
+    {
+      id: 1008,
+      headline: 'Georgia 2 - Portugal 0',
+      image:
+        'https://ichef.bbci.co.uk/news/913/cpsprodpb/67d8/live/79bec470-3409-11ef-b6ed-e53975d260f1.jpg',
+      short:
+        "A certain portuguese player said: 'They are jealous, I make more money than all of them together'",
+      date: 1719581184,
+      featured: true
     }
   ])
 
@@ -52,13 +80,5 @@ export const useContentStore = defineStore('content', () => {
     return array.sort((a, b) => b.date - a.date)
   }
 
-  function getFeatured(array) {
-    for (const item of array) {
-      if (item.featured) {
-        return item
-      }
-    }
-  }
-
-  return { articles, sortArticlesByDate, getFeatured }
+  return { articles, sortArticlesByDate }
 })
