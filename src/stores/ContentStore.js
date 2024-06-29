@@ -70,7 +70,7 @@ export const useContentStore = defineStore('content', () => {
       image:
         'https://ichef.bbci.co.uk/news/913/cpsprodpb/67d8/live/79bec470-3409-11ef-b6ed-e53975d260f1.jpg',
       short:
-        "A certain portuguese player said: 'They are jealous, I make more money than all of them together'",
+        "A portuguese player said: 'They are jealous, I make more money than all of them together'",
       date: 1719581184,
       featured: true
     }

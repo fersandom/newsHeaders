@@ -20,6 +20,7 @@ async function prepareArticles() {
   getFeaturedArticles()
 }
 
+//Getting the featured articles from the updated list
 function getFeaturedArticles() {
   let i = 0
   while (featuredArticles.value.length < 3) {
@@ -28,7 +29,6 @@ function getFeaturedArticles() {
     }
     i++
   }
-  console.log(featuredArticles.value)
 }
 
 prepareArticles()
@@ -40,10 +40,7 @@ prepareArticles()
       <ATitle text="Headline and Teaser" size="3.5rem"></ATitle>
     </header>
     <section class="featured-article">
-      <!-- <FeaturedArticle
-        :headline="featuredArticle.headline"
-        :img-source="featuredArticle.image"
-      ></FeaturedArticle> -->
+      <FeaturedArticle :featured-articles="featuredArticles"></FeaturedArticle>
     </section>
     <section>
       <div class="cards-container">
