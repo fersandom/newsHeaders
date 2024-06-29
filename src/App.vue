@@ -8,6 +8,4 @@ import NavLinks from './components/NavLinks.vue'
   <RouterView></RouterView>
 </template>
 
-<style>
-
-</style>
+<style></style>

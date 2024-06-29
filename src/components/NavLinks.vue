@@ -4,6 +4,7 @@
   <div class="links-container">
     <RouterLink to="/">Home</RouterLink>
     <RouterLink to="/about">About</RouterLink>
+    <RouterLink to="/news">From Firestore</RouterLink>
   </div>
 </template>
 

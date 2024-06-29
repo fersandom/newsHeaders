@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from 'vue'
+import { onMounted, ref } from 'vue'
 import ATitle from './ATitle.vue'
 
 const props = defineProps({
@@ -7,6 +7,12 @@ const props = defineProps({
 })
 
 const i = ref(0)
+
+function startTimer() {
+  setInterval(() => {
+    goToNextArticle()
+  }, 3000)
+}
 
 function goToNextArticle() {
   if (i.value === props.featuredArticles.length - 1) {
@@ -23,6 +29,10 @@ function goToPreviousArticle() {
     i.value--
   }
 }
+
+onMounted(() => {
+  startTimer()
+})
 </script>
 
 <template>
@@ -31,7 +41,6 @@ function goToPreviousArticle() {
     <img :src="props.featuredArticles[i].image" alt="An image" />
     <div class="buttons-container">
       <button @click="goToPreviousArticle">-</button>
-      <!-- <p v-for="article in props.featuredArticles" :key="article.id">O</p> -->
       <div v-for="(article, index) in props.featuredArticles" :key="article.id">
         <p v-if="i == index">O</p>
         <p v-else>X</p>
